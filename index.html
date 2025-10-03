@@ -6,207 +6,123 @@
 <title>My Complete Movie Collection (Searchable)</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
-/* Use a dark cinematic background */
+
 body {
   font-family: 'Poppins', sans-serif;
-  background: #1c1c1c; /* Dark background */
+  background: #1c1c1c;
   margin: 0;
   padding: 0;
-  color: #e0e0e0; /* Light text for contrast */
+  color: #e0e0e0;
 }
 
-/* Updated Header */
 header {
   text-align: center;
-  padding: 30px 20px; /* More padding */
-  background: linear-gradient(135deg, #0f1c3f, #071228); /* Deep blue gradient */
+  padding: 30px 20px;
+  background: linear-gradient(135deg, #f492f0, #5E429C);
   color: white;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.5); /* Stronger shadow */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
 }
-header h1 { 
-  margin: 0; 
-  font-size: 2.2rem; 
-  font-weight: 700; 
-  letter-spacing: 1px;
-}
-header p { 
-  margin-top: 10px; 
-  font-size: 1.1rem; 
-  color: #b0c4de; /* Softer subtext color */
-}
+header h1 { margin: 0; font-size: 2.2rem; font-weight: 700; letter-spacing: 1px; }
+header p { margin-top: 10px; font-size: 1.1rem; color: #b0c4de; }
 
-/* Search Bar - Sticky on top */
 #search-container {
   position: sticky;
   top: 0;
-  background: #252525; /* Dark background for the bar */
+  background: #252525;
   padding: 15px 20px;
   display: flex;
   align-items: center;
   gap: 15px;
-  border-bottom: 2px solid #007bff; /* Accent border */
+  border-bottom: 2px solid #f492f0;
   z-index: 10;
 }
 #search-input {
   flex: 1;
   padding: 12px 15px;
   border: 1px solid #444;
-  background: #333; /* Dark input field */
+  background: #333;
   color: #fff;
   border-radius: 10px;
   font-size: 1rem;
   transition: border-color 0.3s;
 }
-#search-input:focus {
-  border-color: #00c6ff; /* Highlight on focus */
-  outline: none;
-}
-#search-container label {
-  font-size: 1.5rem;
-  color: #00c6ff;
-}
+#search-input:focus { border-color: #5E429C; outline: none; }
+#search-container label { font-size: 1.5rem; color: #5E429C; }
 
-/* Note/Alert Box */
 .note {
   margin: 20px 16px;
   padding: 15px;
-  background: #3a3219; /* Darker yellow-brown */
+  background: #3a3219;
   border: 1px solid #7c6827;
   border-radius: 10px;
   font-size: 0.95rem;
   color: #ffeb90;
 }
-.note a { 
-  color:#4fc3f7; 
-  text-decoration:underline; 
-  font-weight:bold; 
-}
+.note a { color:#f492f0; text-decoration:underline; font-weight:bold; }
 
-/* Movie Entry Card - The main focus */
+/* Movie Entry Card with Glow */
 .movie-entry {
-  background: #2a2a2a; /* Dark card background */
+  background: #2a2a2a;
   margin: 20px 16px;
   padding: 20px;
   border-radius: 15px;
-  box-shadow: 0 8px 15px rgba(0,0,0,0.3); /* Prominent shadow */
+  box-shadow: 0 8px 15px rgba(0,0,0,0.3);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border-left: 5px solid #007bff; /* Left border accent */
+  border-left: 5px solid #f492f0;
 }
 .movie-entry:hover {
-  transform: translateY(-5px); /* Stronger lift effect */
-  box-shadow: 0 15px 25px rgba(0,0,0,0.5); 
-  border-left-color: #00c6ff; /* Accent color change on hover */
+  transform: translateY(-5px);
+  border-left-color: #5E429C;
+  box-shadow: 0 0 20px #f492f0, 0 0 35px #5E429C, 0 15px 25px rgba(0,0,0,0.5);
 }
 .movie-entry h2 {
   margin: 0 0 15px 0;
   font-size: 1.4rem;
   color: #fff;
-  border-bottom: 2px solid #007bff;
+  border-bottom: 2px solid #f492f0;
   padding-bottom: 8px;
   font-weight: 600;
 }
-.movie-entry h3 { 
-  color:#00c6ff; /* Light blue for episode titles */
-  margin:15px 0 8px 0; 
-  font-size:1.2rem; 
-}
+.movie-entry h3 { color:#5E429C; margin:15px 0 8px 0; font-size:1.2rem; }
 
-/* Link List and Buttons */
-.link-list { 
-  list-style: none; 
-  padding: 0; 
-  margin: 10px 0 0 0; 
-  display: flex; /* Makes links align horizontally */
-  flex-wrap: wrap; /* Allows wrap on small screens */
-  gap: 10px;
-}
-.link-list li { 
-  margin-bottom: 0; /* Removed list item margin */
-}
+.link-list { list-style: none; padding: 0; margin: 10px 0 0 0; display: flex; flex-wrap: wrap; gap: 10px; }
+.link-list li { margin-bottom: 0; }
 .link-list a {
   display: inline-block;
   padding: 10px 18px;
-  background: #007bff; /* Primary button color */
+  background: #f492f0;
   color: white;
   border-radius: 8px;
   text-decoration: none;
   font-weight: 600;
   min-width: 100px;
   text-align: center;
-  transition: background 0.3s ease, transform 0.1s;
+  transition: background 0.3s ease, transform 0.1s, box-shadow 0.3s ease;
 }
-.link-list a:hover { 
-  background: #00c6ff; /* Lighter blue on hover */
+.link-list a:hover {
+  background: #5E429C;
   transform: translateY(-1px);
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  box-shadow: 0 0 10px #f492f0, 0 0 20px #5E429C, 0 2px 5px rgba(0,0,0,0.2);
 }
 
-/* No Results and Pagination */
-#no-results {
-  text-align: center;
-  color: #aaa;
-  margin: 40px 0;
-  font-size: 1.1rem;
-}
-#no-results a {
-  color: #00c6ff;
-  text-decoration: none;
-  font-weight: 700;
-  display: inline-block;
-  padding: 0 5px;
-}
-#no-results a:hover {
-  text-decoration: underline;
-}
+#no-results { text-align: center; color: #aaa; margin: 40px 0; font-size: 1.1rem; }
+#no-results a { color: #5E429C; text-decoration: none; font-weight: 700; display: inline-block; padding: 0 5px; }
+#no-results a:hover { text-decoration: underline; }
 
-.pagination {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin: 30px 20px;
-}
-.pagination a, .pagination span {
-  padding: 10px 14px;
-  border-radius: 8px;
-  font-weight: 600;
-  text-decoration: none;
-  min-width: 40px;
-  text-align: center;
-}
-.pagination a {
-  background: #007bff;
-  color: white;
-  cursor: pointer;
-}
-.pagination a:hover { background: #00c6ff; }
-.pagination span.current {
-  background: #00c6ff; /* Highlight current page */
-  color: white;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-}
-.pagination span.disabled {
-  background: #444;
-  color: #999;
-  cursor: default;
-}
-.ellipsis {
-  color: #999;
-  padding: 10px 6px;
-}
+.pagination { display: flex; justify-content: center; flex-wrap: wrap; gap: 8px; margin: 30px 20px; }
+.pagination a, .pagination span { padding: 10px 14px; border-radius: 8px; font-weight: 600; text-decoration: none; min-width: 40px; text-align: center; }
+.pagination a { background: #f492f0; color: white; cursor: pointer; }
+.pagination a:hover { background: #5E429C; }
+.pagination span.current { background: #5E429C; color: white; box-shadow: 0 2px 5px rgba(0,0,0,0.3); }
+.pagination span.disabled { background: #444; color: #999; cursor: default; }
+.ellipsis { color: #999; padding: 10px 6px; }
 
-/* Mobile-Specific Styles */
 @media (max-width:600px) {
   .movie-entry { margin: 15px 10px; padding: 15px; border-radius: 12px; }
   header h1 { font-size: 1.8rem; }
   header p { font-size: 1rem; }
   .link-list { gap: 8px; flex-direction: column; }
-  .link-list a {
-    width: 100%;
-    margin-right: 0;
-    padding: 12px;
-    box-sizing: border-box;
-  }
+  .link-list a { width: 100%; margin-right: 0; padding: 12px; box-sizing: border-box; }
 }
 </style>
 </head>
@@ -224,6 +140,9 @@ header p {
 <div id="movie-list-container">
 <div class='movie-entry' style='display:none;'><h2>🎬 Idli Kadai Tamil HQ PreDVD - - HQ Clean Audio 🎬</h2><ul class='link-list'><li>📥 7.5GB → <a href="https://earn4link.in/mgBPUtnvQjF" target="_blank">Download</a></li><li>📥 2.9GB → <a href="https://earn4link.in/udG5nUtatlC4" target="_blank">Download</a></li><li>📥 1.4GB → <a href="https://earn4link.in/q1mUeudkDtRw" target="_blank">Download</a></li><li>📥 950MB → <a href="https://earn4link.in/SLmKvZud0Nb" target="_blank">Download</a></li><li>📥 700MB → <a href="https://earn4link.in/uOoX4gYJ" target="_blank">Download</a></li><li>📥 400MB → <a href="https://earn4link.in/L9qhFH" target="_blank">Download</a></li><li>📥 250MB → <a href="https://earn4link.in/C6gSIc" target="_blank">Download</a></li></ul></div>
 <div class='movie-entry' style='display:none;'><h2>🎬 Madharasi Tamil 🎬</h2><ul class='link-list'><li>📥 21.4GB → <a href="https://earn4link.in/ePMEBAK0wWO8gV" target="_blank">Download</a></li><li>📥 9GB → <a href="https://earn4link.in/vXLS8MSY1C" target="_blank">Download</a></li><li>📥 5.7GB → <a href="https://earn4link.in/Hxf7pEij" target="_blank">Download</a></li><li>📥 3.5GB → <a href="https://earn4link.in/cfv1bCKwG" target="_blank">Download</a></li><li>📥 1.5GB → <a href="https://earn4link.in/JglxhcYwiu" target="_blank">Download</a></li><li>📥 1.4GB → <a href="https://earn4link.in/kvhSD8CAy" target="_blank">Download</a></li><li>📥 950MB → <a href="https://earn4link.in/ry4McW" target="_blank">Download</a></li><li>📥 700MB → <a href="https://earn4link.in/YyvcnVVm" target="_blank">Download</a></li><li>📥 400MB → <a href="https://earn4link.in/aQbcykBL" target="_blank">Download</a></li><li>📥 250MB → <a href="https://earn4link.in/QD9NSnq68" target="_blank">Download</a></li></ul></div>
+<div class='movie-entry' style='display:none;'><h2>🎬 Kantara A Legend: Chapter 1 Tamil HQ PreDVD - - HQ Clean Audio 🎬</h2><ul class='link-list'><li>📥 7.8GB → <a href="https://earn4link.in/r7eUrwS1icOX" target="_blank">Download</a></li><li>📥 3GB → <a href="https://earn4link.in/cCtyQDj5JMi" target="_blank">Download</a></li><li>📥 1.6GB → <a href="https://earn4link.in/tR2Q8IGEtI5q" target="_blank">Download</a></li><li>📥 1GB → <a href="https://earn4link.in/iYJLx4kZd" target="_blank">Download</a></li><li>📥 700MB → <a href="https://earn4link.in/fLpX" target="_blank">Download</a></li><li>📥 400MB → <a href="https://earn4link.in/knW3HOLl0V5LW" target="_blank">Download</a></li><li>📥 250MB → <a href="https://earn4link.in/cDY1QjPjsL" target="_blank">Download</a></li></ul></div>
+<div class='movie-entry' style='display:none;'><h2>🎬 Kantara A Legend: Chapter 1 Telugu HQ PreDVD - - HQ Clean Audio 🎬</h2><ul class='link-list'><li>📥 1.4GB → <a href="https://earn4link.in/Km6w" target="_blank">Download</a></li><li>📥 950MB → <a href="https://earn4link.in/mCTSE7Mt6LSJLc" target="_blank">Download</a></li><li>📥 700MB → <a href="https://earn4link.in/cwmWesNL" target="_blank">Download</a></li><li>📥 400MB → <a href="https://earn4link.in/LI0ZrHRKwM" target="_blank">Download</a></li><li>📥 250MB → <a href="https://earn4link.in/gIVcYaN4n1yUSzB" target="_blank">Download</a></li></ul></div>
+<div class='movie-entry' style='display:none;'><h2>🎬 Sunny Sanskari Ki Tulsi Kumari Hindi HQ PreDVD - - HQ Clean Audio 🎬</h2><ul class='link-list'><li>📥 2.5GB → <a href="https://earn4link.in/r2kWGB8Pt7qCJ" target="_blank">Download</a></li><li>📥 1.4GB → <a href="https://earn4link.in/m7N9x7H3IzlPy" target="_blank">Download</a></li><li>📥 700MB → <a href="https://earn4link.in/CCvwRuPN" target="_blank">Download</a></li><li>📥 400MB → <a href="https://earn4link.in/GY1ayf7Iw" target="_blank">Download</a></li></ul></div>
 <div class='movie-entry' style='display:none;'><h2>🎬 Cooku With Comali Tamil - S06 EP(01-43) 🎬</h2><h3>Episodes 01</h3><ul class='link-list'><li>📥 1080p - 2GB: → <a href="https://earn4link.in/whPO4wjjbG" target="_blank">Download</a></li><li>📥 720p - 1GB: → <a href="https://earn4link.in/pDyPLPrAs" target="_blank">Download</a></li><li>📥 360p - 400MB: → <a href="https://earn4link.in/5gry284cdAh0" target="_blank">Download</a></li></ul><h3>Episodes 02</h3><ul class='link-list'><li>📥 1080p - 1.2GB: → <a href="https://earn4link.in/hKzIjybW" target="_blank">Download</a></li><li>📥 720p - 700MB: → <a href="https://earn4link.in/8myCkd4F1hHN" target="_blank">Download</a></li><li>📥 360p - 200MB: → <a href="https://earn4link.in/EWhIZLG" target="_blank">Download</a></li></ul><h3>Episodes 03</h3><ul class='link-list'><li>📥 1080p - 1.2GB: → <a href="https://earn4link.in/C0h3A" target="_blank">Download</a></li><li>📥 720p - 700MB: → <a href="https://earn4link.in/FREfUKHUD84TOXR" target="_blank">Download</a></li><li>📥 360p - 250MB: → <a href="https://earn4link.in/sPqhhLaGDd" target="_blank">Download</a></li></ul><h3>Episodes 04</h3><ul class='link-list'><li>📥 1080p - 1.1GB: → <a href="https://earn4link.in/ewH0aa" target="_blank">Download</a></li><li>📥 720p - 700MB: → <a href="https://earn4link.in/Jw1IB6P" target="_blank">Download</a></li><li>📥 360p - 200MB: → <a href="https://earn4link.in/ovdyJQCu5k8b" target="_blank">Download</a></li></ul><h3>Episodes 05</h3><ul class='link-list'><li>📥 1080p - 1.2GB: → <a href="https://earn4link.in/XGyZyo6" target="_blank">Download</a></li><li>📥 720p - 700MB: → <a href="https://earn4link.in/XAJLEiExXip" target="_blank">Download</a></li><li>📥 360p - 300MB: → <a href="https://earn4link.in/ELicb7xc6BTl" target="_blank">Download</a></li></ul><h3>Episodes 06</h3><ul class='link-list'><li>📥 1080p - 1.2GB: → <a href="https://earn4link.in/Pz0ujbtTr3Qv" target="_blank">Download</a></li><li>📥 720p - 700MB: → <a href="https://earn4link.in/iF7I9k" target="_blank">Download</a></li><li>📥 360p - 250MB: → <a href="https://earn4link.in/0IUCUNdLv" target="_blank">Download</a></li></ul><h3>Episodes 07</h3><ul class='link-list'><li>📥 1080p - 1.4GB: → <a href="https://earn4link.in/PvrGwhAn" target="_blank">Download</a></li><li>📥 720p - 750MB: → <a href="https://earn4link.in/5vdN49" target="_blank">Download</a></li><li>📥 360p - 300MB: → <a href="https://earn4link.in/7D8gFLAzd9n4qpv" target="_blank">Download</a></li></ul><h3>Episodes 08</h3><ul class='link-list'><li>📥 1080p - 1GB: → <a href="https://earn4link.in/Drhw1erutUBd7" target="_blank">Download</a></li><li>📥 720p - 600MB: → <a href="https://earn4link.in/Xz75rbAk74Pa" target="_blank">Download</a></li><li>📥 360p - 200MB: → <a href="https://earn4link.in/FuAL" target="_blank">Download</a></li></ul><h3>Episodes 09</h3><ul class='link-list'><li>📥 1080p - 1.3GB: → <a href="https://earn4link.in/OwpsZc7zWTt1" target="_blank">Download</a></li><li>📥 720p - 700MB: → <a href="https://earn4link.in/hQR3VV" target="_blank">Download</a></li><li>📥 360p - 250MB: → <a href="https://earn4link.in/ZmFcMS3EzciS" target="_blank">Download</a></li></ul><h3>Episodes 10</h3><ul class='link-list'><li>📥 1080p - 1.2GB: → <a href="https://earn4link.in/5GBvCeMH" target="_blank">Download</a></li><li>📥 720p - 650MB: → <a href="https://earn4link.in/AMKlcySYVEVzZLX" target="_blank">Download</a></li><li>📥 360p - 250MB: → <a href="https://earn4link.in/C3y83xTIVn78" target="_blank">Download</a></li></ul><h3>Episodes 11</h3><ul class='link-list'><li>📥 1080p - 1.4GB: → <a href="https://earn4link.in/3radMYVV" target="_blank">Download</a></li><li>📥 720p - 750MB: → <a href="https://earn4link.in/bRTEYp" target="_blank">Download</a></li><li>📥 360p - 300MB: → <a href="https://earn4link.in/LCYA0ewSO" target="_blank">Download</a></li></ul><h3>Episodes 12</h3><ul class='link-list'><li>📥 1080p - 1GB: → <a href="https://earn4link.in/gODmg26T" target="_blank">Download</a></li><li>📥 720p - 600MB: → <a href="https://earn4link.in/bqlniuRlMzPUSR" target="_blank">Download</a></li><li>📥 360p - 300MB: → <a href="https://earn4link.in/Xu5q" target="_blank">Download</a></li></ul><h3>Episodes 13</h3><ul class='link-list'><li>📥 1080p - 1GB: → <a href="https://earn4link.in/vnY6Tpg2zcL" target="_blank">Download</a></li><li>📥 720p - 600MB: → <a href="https://earn4link.in/4zl2FOh" target="_blank">Download</a></li><li>📥 360p - 280MB: → <a href="https://earn4link.in/7xCFe" target="_blank">Download</a></li></ul><h3>Episodes 14</h3><ul class='link-list'><li>📥 1080p - 1.2GB: → <a href="https://earn4link.in/ohbkbQX" target="_blank">Download</a></li><li>📥 720p - 600MB: → <a href="https://earn4link.in/OEymqExU" target="_blank">Download</a></li><li>📥 360p - 300MB: → <a href="https://earn4link.in/sQ5ydx3k" target="_blank">Download</a></li></ul><h3>Episodes 15</h3><ul class='link-list'><li>📥 1080p - 1GB: → <a href="https://earn4link.in/M7XL" target="_blank">Download</a></li><li>📥 720p - 600MB: → <a href="https://earn4link.in/S7M0G1xbC5HMP" target="_blank">Download</a></li><li>📥 360p - 250MB: → <a href="https://earn4link.in/0zeqVfQHkOh2HsF" target="_blank">Download</a></li></ul><h3>Episodes 16</h3><ul class='link-list'><li>📥 1080p - 1GB: → <a href="https://earn4link.in/h77iSF27Un" target="_blank">Download</a></li><li>📥 720p - 600MB: → <a href="https://earn4link.in/VnoSt6RUqt" target="_blank">Download</a></li><li>📥 360p - 200MB: → <a href="https://earn4link.in/IWsOHEp" target="_blank">Download</a></li></ul><h3>Episodes 17</h3><ul class='link-list'><li>📥 1080p - 1GB: → <a href="https://earn4link.in/utVmb7edzToBgnn" target="_blank">Download</a></li><li>📥 720p - 700MB: → <a href="https://earn4link.in/DNSk4CEMLLPGG" target="_blank">Download</a></li><li>📥 480p - 250MB: → <a href="https://earn4link.in/gO7bRjghk7" target="_blank">Download</a></li></ul><h3>Episodes 18</h3><ul class='link-list'><li>📥 1080p - 1GB: → <a href="https://earn4link.in/cBvdDF0rIgB" target="_blank">Download</a></li><li>📥 720p - 650MB: → <a href="https://earn4link.in/EqcX8O9jaueo8" target="_blank">Download</a></li><li>📥 360p - 300MB: → <a href="https://earn4link.in/NBQeGkAyQFfo" target="_blank">Download</a></li></ul><h3>Episodes 19</h3><ul class='link-list'><li>📥 1080p - 1GB: → <a href="https://earn4link.in/CP59" target="_blank">Download</a></li><li>📥 720p - 600MB: → <a href="https://earn4link.in/2B3eAJVTBNsHEqC" target="_blank">Download</a></li><li>📥 360p - 250MB: → <a href="https://earn4link.in/t34mR" target="_blank">Download</a></li></ul><h3>Episodes 20</h3><ul class='link-list'><li>📥 720p - 650MB: → <a href="https://earn4link.in/6BqfvGDXHOCWWzD" target="_blank">Download</a></li><li>📥 360p - 300MB: → <a href="https://earn4link.in/mpRx" target="_blank">Download</a></li></ul><h3>Episodes 21</h3><ul class='link-list'><li>📥 1080p - 1GB: → <a href="https://earn4link.in/L8NTBBmTdPVAd" target="_blank">Download</a></li><li>📥 720p - 600MB: → <a href="https://earn4link.in/PrXRFpERgCI" target="_blank">Download</a></li><li>📥 360p - 250MB: → <a href="https://earn4link.in/qq1Q7K" target="_blank">Download</a></li></ul><h3>Episodes 22</h3><ul class='link-list'><li>📥 1080p - 1GB: → <a href="https://earn4link.in/pge2x9m2W" target="_blank">Download</a></li><li>📥 720p - 600MB: → <a href="https://earn4link.in/4nE2x2CMwN" target="_blank">Download</a></li><li>📥 360p - 200MB: → <a href="https://earn4link.in/Wlic" target="_blank">Download</a></li></ul><h3>Episodes 23</h3><ul class='link-list'><li>📥 1080p - 1.2GB: → <a href="https://earn4link.in/gjfGSY" target="_blank">Download</a></li><li>📥 720p - 650MB: → <a href="https://earn4link.in/41tJGW" target="_blank">Download</a></li><li>📥 360p - 250MB: → <a href="https://earn4link.in/dTPXo1f4r" target="_blank">Download</a></li></ul><h3>Episodes 24</h3><ul class='link-list'><li>📥 1080p - 1GB: → <a href="https://earn4link.in/SaAau67ZQP" target="_blank">Download</a></li><li>📥 720p - 500MB: → <a href="https://earn4link.in/wlq6jRR" target="_blank">Download</a></li><li>📥 360p - 200MB: → <a href="https://earn4link.in/LRrC7yeMvG" target="_blank">Download</a></li></ul><h3>Episodes 25</h3><ul class='link-list'><li>📥 1080p - 1GB: → <a href="https://earn4link.in/CiRv0ua" target="_blank">Download</a></li><li>📥 720p - 500MB: → <a href="https://earn4link.in/wpbHv" target="_blank">Download</a></li><li>📥 360p - 200MB: → <a href="https://earn4link.in/56ZscAm77rz4" target="_blank">Download</a></li></ul><h3>Episodes 26</h3><ul class='link-list'><li>📥 1080p - 1GB: → <a href="https://earn4link.in/kmRx9" target="_blank">Download</a></li><li>📥 720p - 500MB: → <a href="https://earn4link.in/cK3fab" target="_blank">Download</a></li><li>📥 360p - 250MB: → <a href="https://earn4link.in/kmRx9" target="_blank">Download</a></li></ul><h3>Episodes 27</h3><ul class='link-list'><li>📥 1080p - 1GB: → <a href="https://earn4link.in/3taOQ8sw2O" target="_blank">Download</a></li><li>📥 720p - 500MB: → <a href="https://earn4link.in/h1sF8Fjg" target="_blank">Download</a></li><li>📥 360p - 200MB: → <a href="https://earn4link.in/p6C3zS1tWty" target="_blank">Download</a></li></ul><h3>Episodes 28</h3><ul class='link-list'><li>📥 1080p - 1GB: → <a href="https://earn4link.in/4LhC" target="_blank">Download</a></li><li>📥 720p - 500MB: → <a href="https://earn4link.in/IBvL0X9WDYxl" target="_blank">Download</a></li><li>📥 360p - 220MB: → <a href="https://earn4link.in/k2CTd6Q2" target="_blank">Download</a></li></ul><h3>Episodes 29</h3><ul class='link-list'><li>📥 1080p - 1.3GB: → <a href="https://earn4link.in/xGcaiS" target="_blank">Download</a></li><li>📥 720p - 700MB: → <a href="https://earn4link.in/8beJVB5gDzRmFrM" target="_blank">Download</a></li><li>📥 480p - 250MB: → <a href="https://earn4link.in/zCIjCFYVcibM" target="_blank">Download</a></li></ul><h3>Episodes 30</h3><ul class='link-list'><li>📥 1080p - 1GB: → <a href="https://earn4link.in/Xiq7l5rTPXt0" target="_blank">Download</a></li><li>📥 720p - 500MB: → <a href="https://earn4link.in/nIpi" target="_blank">Download</a></li><li>📥 480p - 250MB: → <a href="https://earn4link.in/zmrOF5p6JZY" target="_blank">Download</a></li></ul><h3>Episodes 31</h3><ul class='link-list'><li>📥 1080p - 1GB: → <a href="https://earn4link.in/ti0WLpV9d" target="_blank">Download</a></li><li>📥 720p - 500MB: → <a href="https://earn4link.in/kj0kqrAygUsSk" target="_blank">Download</a></li><li>📥 480p - 250MB: → <a href="https://earn4link.in/uPzO3lNLpOl5" target="_blank">Download</a></li></ul><h3>Episodes 32</h3><ul class='link-list'><li>📥 1080p - 1GB: → <a href="https://earn4link.in/msp7fMZkW" target="_blank">Download</a></li><li>📥 720p - 500MB: → <a href="https://earn4link.in/rWQ9k5I8uJLS" target="_blank">Download</a></li><li>📥 480p - 250MB: → <a href="https://earn4link.in/Qh0eICVZSXtp" target="_blank">Download</a></li></ul><h3>Episodes 33</h3><ul class='link-list'><li>📥 1080p - 1.2GB: → <a href="https://earn4link.in/PJ0Sjn8rvaqVdrv" target="_blank">Download</a></li><li>📥 720p - 700MB: → <a href="https://earn4link.in/8vHxyVV1P" target="_blank">Download</a></li><li>📥 480p - 250MB: → <a href="https://earn4link.in/ZY38Hk5e" target="_blank">Download</a></li></ul><h3>Episodes 34</h3><ul class='link-list'><li>📥 1080p - 1GB: → <a href="https://earn4link.in/YQIyeY3OOnuq" target="_blank">Download</a></li><li>📥 720p - 500MB: → <a href="https://earn4link.in/fexj6ZLvW" target="_blank">Download</a></li><li>📥 480p - 200MB: → <a href="https://earn4link.in/VmaVZKRkUta3t" target="_blank">Download</a></li></ul><h3>Episodes 35</h3><ul class='link-list'><li>📥 1080p - 1GB: → <a href="https://earn4link.in/WbVk5xpIdpG9uW" target="_blank">Download</a></li><li>📥 720p - 450MB: → <a href="https://earn4link.in/LxYk1EB" target="_blank">Download</a></li><li>📥 480p - 250MB: → <a href="https://earn4link.in/3ekpfoVbGDoRkS" target="_blank">Download</a></li></ul><h3>Episodes 36</h3><ul class='link-list'><li>📥 1080p - 1GB: → <a href="https://earn4link.in/FmUWc5SGA" target="_blank">Download</a></li><li>📥 720p - 600MB: → <a href="https://earn4link.in/PfJfu5DUchoHyJo" target="_blank">Download</a></li><li>📥 480p - 250MB: → <a href="https://earn4link.in/r78Zp5DB" target="_blank">Download</a></li></ul><h3>Episodes 37</h3><ul class='link-list'><li>📥 1080p - 1GB: → <a href="https://earn4link.in/IEHKbCOpJ3" target="_blank">Download</a></li><li>📥 720p - 500MB: → <a href="https://earn4link.in/hn0RdulHX" target="_blank">Download</a></li><li>📥 480p - 220MB: → <a href="https://earn4link.in/cvIe0urboClA" target="_blank">Download</a></li></ul><h3>Episodes 38</h3><ul class='link-list'><li>📥 1080p - 1GB: → <a href="https://earn4link.in/usVZDpolL8h3G" target="_blank">Download</a></li><li>📥 720p - 600MB: → <a href="https://earn4link.in/zYxWoaYFvMQvHQ" target="_blank">Download</a></li><li>📥 480p - 250MB: → <a href="https://earn4link.in/H9bJ6KMpYWte7Xq" target="_blank">Download</a></li></ul><h3>Episodes 39</h3><ul class='link-list'><li>📥 1080p - 1GB: → <a href="https://earn4link.in/qDyvyb" target="_blank">Download</a></li><li>📥 720p - 500MB: → <a href="https://earn4link.in/mgZm" target="_blank">Download</a></li><li>📥 360p - 200MB: → <a href="https://earn4link.in/96Uch" target="_blank">Download</a></li></ul><h3>Episodes 40</h3><ul class='link-list'><li>📥 1080p - 1.2GB: → <a href="https://earn4link.in/9uFD27TAilOmpoe" target="_blank">Download</a></li><li>📥 720p - 600MB: → <a href="https://earn4link.in/pevMsCZ5xU" target="_blank">Download</a></li><li>📥 480p - 250MB: → <a href="https://earn4link.in/OmaZCwiA0LmAY" target="_blank">Download</a></li></ul><h3>Episodes 41</h3><ul class='link-list'><li>📥 1080p - 1.2GB: → <a href="https://earn4link.in/hNU4g1a0ic0Z" target="_blank">Download</a></li><li>📥 720p - 500MB: → <a href="https://earn4link.in/YryDUlOo" target="_blank">Download</a></li><li>📥 480p - 250MB: → <a href="https://earn4link.in/gEjiOKlB" target="_blank">Download</a></li></ul><h3>Episodes 42</h3><ul class='link-list'><li>📥 1080p - 1GB: → <a href="https://earn4link.in/nPp2fe0MUCd" target="_blank">Download</a></li><li>📥 720p - 500MB: → <a href="https://earn4link.in/BcDvrHAEg" target="_blank">Download</a></li><li>📥 360p - 200MB: → <a href="https://earn4link.in/Qrqd" target="_blank">Download</a></li></ul><h3>Episodes 43</h3><ul class='link-list'><li>📥 1080p - 2.8GB: → <a href="https://earn4link.in/IoeLRvrVR6" target="_blank">Download</a></li><li>📥 720p - 1.4GB: → <a href="https://earn4link.in/ZjzoSViclvmT" target="_blank">Download</a></li><li>📥 360p - 500MB: → <a href="https://earn4link.in/j63Inz3" target="_blank">Download</a></li></ul></div>
 <div class='movie-entry' style='display:none;'><h2>🎬 Top Cooku Dupe Cooku Tamil - S02 - EP (01-13) 🎬</h2><h3>Episodes 01</h3><ul class='link-list'><li>📥 1080p - 2.4GB: → <a href="https://earn4link.in/HMRyua" target="_blank">Download</a></li><li>📥 720p - 1.5GB: → <a href="https://earn4link.in/k8DJV04QB" target="_blank">Download</a></li><li>📥 360p - 450MB: → <a href="https://earn4link.in/mTCdW0aW" target="_blank">Download</a></li></ul><h3>Episodes 02</h3><ul class='link-list'><li>📥 1080p - 1.2GB: → <a href="https://earn4link.in/mi1aDWUtj" target="_blank">Download</a></li><li>📥 720p - 750MB: → <a href="https://earn4link.in/U9mRzeG" target="_blank">Download</a></li><li>📥 360p - 250MB: → <a href="https://earn4link.in/Fv26zNGpcA39rt3" target="_blank">Download</a></li></ul><h3>Episodes 03</h3><ul class='link-list'><li>📥 1080p - 1.2GB: → <a href="https://earn4link.in/5PBh5d4OUEIH" target="_blank">Download</a></li><li>📥 720p - 800MB: → <a href="https://earn4link.in/fzd0SRHLA" target="_blank">Download</a></li><li>📥 360p - 300MB: → <a href="https://earn4link.in/Ul6a0FDHONzRa" target="_blank">Download</a></li></ul><h3>Episodes 04</h3><ul class='link-list'><li>📥 1080p - 1.2GB: → <a href="https://earn4link.in/MSjzp" target="_blank">Download</a></li><li>📥 720p - 800MB: → <a href="https://earn4link.in/MLqJmdC" target="_blank">Download</a></li><li>📥 360p - 250MB: → <a href="https://earn4link.in/a5S0zW" target="_blank">Download</a></li></ul><h3>Episodes 05</h3><ul class='link-list'><li>📥 1080p - 1.2GB: → <a href="https://earn4link.in/4cFHD" target="_blank">Download</a></li><li>📥 720p - 900MB: → <a href="https://earn4link.in/ZULZ6" target="_blank">Download</a></li><li>📥 360p - 250MB: → <a href="https://earn4link.in/hJeqdeMQ" target="_blank">Download</a></li></ul><h3>Episodes 06</h3><ul class='link-list'><li>📥 1080p - 1.2GB: → <a href="https://earn4link.in/RDE6" target="_blank">Download</a></li><li>📥 720p - 800MB: → <a href="https://earn4link.in/5MG9xxaa" target="_blank">Download</a></li><li>📥 360p - 220MB: → <a href="https://earn4link.in/8zkbhWNSc0x" target="_blank">Download</a></li></ul><h3>Episodes 07</h3><ul class='link-list'><li>📥 1080p - 1.4GB: → <a href="https://earn4link.in/nzesu8kB" target="_blank">Download</a></li><li>📥 720p - 900MB: → <a href="https://earn4link.in/HxfJMZMM8V" target="_blank">Download</a></li><li>📥 360p - 250MB: → <a href="https://earn4link.in/zxXf6II" target="_blank">Download</a></li></ul><h3>Episodes 08</h3><ul class='link-list'><li>📥 1080p - 1.2GB: → <a href="https://earn4link.in/33pF4" target="_blank">Download</a></li><li>📥 720p - 800MB: → <a href="https://earn4link.in/3FEtjx8pqOxmS4" target="_blank">Download</a></li><li>📥 360p - 200MB: → <a href="https://earn4link.in/140bTqH5LMkwCJ" target="_blank">Download</a></li></ul><h3>Episodes 09</h3><ul class='link-list'><li>📥 1080p - 1.6GB: → <a href="https://earn4link.in/rQkBLgHt8SAKej" target="_blank">Download</a></li><li>📥 720p - 1GB: → <a href="https://earn4link.in/4g6Pxa0HOH5fQ" target="_blank">Download</a></li><li>📥 360p - 250MB: → <a href="https://earn4link.in/QNOLAd9KKyjko" target="_blank">Download</a></li></ul><h3>Episodes 10</h3><ul class='link-list'><li>📥 1080p - 1.2GB: → <a href="https://earn4link.in/toGeXpFJHR89HOP" target="_blank">Download</a></li><li>📥 720p - 700MB: → <a href="https://earn4link.in/22EoE" target="_blank">Download</a></li><li>📥 360p - 200MB: → <a href="https://earn4link.in/XYFqFKVtd9nOsty" target="_blank">Download</a></li></ul><h3>Episodes 11</h3><ul class='link-list'><li>📥 1080p - 1.4GB: → <a href="https://earn4link.in/a8E0Q0U7PQuv" target="_blank">Download</a></li><li>📥 720p - 950MB: → <a href="https://earn4link.in/o48xGpKk8qQdB" target="_blank">Download</a></li><li>📥 360p - 230MB: → <a href="https://earn4link.in/KuxQSO" target="_blank">Download</a></li></ul><h3>Episodes 12</h3><ul class='link-list'><li>📥 1080p - 1.2GB: → <a href="https://earn4link.in/8pUQ2BPHqyv" target="_blank">Download</a></li><li>📥 720p - 750MB: → <a href="https://earn4link.in/OE4poScMI" target="_blank">Download</a></li><li>📥 360p - 200MB: → <a href="https://earn4link.in/CM7W1dVYt" target="_blank">Download</a></li></ul><h3>Episodes 13</h3><ul class='link-list'><li>📥 1080p - 1.2GB: → <a href="https://earn4link.in/ikY6JdeMfi" target="_blank">Download</a></li><li>📥 720p - 750MB: → <a href="https://earn4link.in/sXDFo3XO" target="_blank">Download</a></li><li>📥 360p - 200MB: → <a href="https://earn4link.in/XuYuap" target="_blank">Download</a></li></ul></div>
 <div class='movie-entry' style='display:none;'><h2>🎬 Confidence Queen S01 EP (01-08) 🎬</h2><h3>Episodes 01</h3><ul class='link-list'><li>📥 1080p - 1GB: → <a href="https://earn4link.in/lc7C2la" target="_blank">Download</a></li><li>📥 720p - 600MB: → <a href="https://earn4link.in/DNY52" target="_blank">Download</a></li><li>📥 250MB - 250MB: → <a href="https://earn4link.in/NAVMdMlFa" target="_blank">Download</a></li></ul><h3>Episodes 02</h3><ul class='link-list'><li>📥 1080p - 1GB: → <a href="https://earn4link.in/6sdWrbnmJ6D" target="_blank">Download</a></li><li>📥 720p - 600MB: → <a href="https://earn4link.in/LHAiZO8" target="_blank">Download</a></li><li>📥 300MB - 300MB: → <a href="https://earn4link.in/V20FtxreidG" target="_blank">Download</a></li></ul><h3>Episodes 03</h3><ul class='link-list'><li>📥 1080p - 900MB: → <a href="https://earn4link.in/shaoKWsEZfiGx" target="_blank">Download</a></li><li>📥 720p - 500MB: → <a href="https://earn4link.in/P1XcBsWNGZ" target="_blank">Download</a></li><li>📥 300MB - 300MB: → <a href="https://earn4link.in/7amPJyIhv0HzXN" target="_blank">Download</a></li></ul><h3>Episodes 04</h3><ul class='link-list'><li>📥 1080p - 900MB: → <a href="https://earn4link.in/dgwaVbcpHk" target="_blank">Download</a></li><li>📥 720p - 500MB: → <a href="https://earn4link.in/IOyQg" target="_blank">Download</a></li><li>📥 300MB - 300MB: → <a href="https://earn4link.in/kQIjZPXHbr9W2" target="_blank">Download</a></li></ul><h3>Episodes 05</h3><ul class='link-list'><li>📥 1080p - 800MB: → <a href="https://earn4link.in/mzOJw50eA0xWU" target="_blank">Download</a></li><li>📥 720p - 500MB: → <a href="https://earn4link.in/fKkTHtTD" target="_blank">Download</a></li><li>📥 250MB - 250MB: → <a href="https://earn4link.in/pPxErsBr9MhC7b" target="_blank">Download</a></li></ul><h3>Episodes 06</h3><ul class='link-list'><li>📥 1080p - 900MB: → <a href="https://earn4link.in/ULnUd13ZYm66" target="_blank">Download</a></li><li>📥 720p - 500MB: → <a href="https://earn4link.in/1G7nE" target="_blank">Download</a></li><li>📥 250MB - 250MB: → <a href="https://earn4link.in/fIGhiI64ByqmFYa" target="_blank">Download</a></li></ul><h3>Episodes 07</h3><ul class='link-list'><li>📥 1080p - 950MB: → <a href="https://earn4link.in/gvdWE" target="_blank">Download</a></li><li>📥 720p - 450MB: → <a href="https://earn4link.in/Gy0yzzcIzv" target="_blank">Download</a></li><li>📥 250MB - 250MB: → <a href="https://earn4link.in/8VmBXttAGfBiCxn" target="_blank">Download</a></li></ul><h3>Episodes 08</h3><ul class='link-list'><li>📥 1080p - 950MB: → <a href="https://earn4link.in/Znfia8adNR6biJL" target="_blank">Download</a></li><li>📥 720p - 450MB: → <a href="https://earn4link.in/CaDybtfqa" target="_blank">Download</a></li><li>📥 250MB - 250MB: → <a href="https://earn4link.in/wFfGDdTDq" target="_blank">Download</a></li></ul></div>
@@ -2574,7 +2493,16 @@ header p {
 <div class='movie-entry' style='display:none;'><h2>🎬 Andha 7 Naatkal Tamil HQ PreDVD - - HQ Clean Audio 🎬</h2><ul class='link-list'><li>📥 2.1GB → <a href="https://earn4link.in/s1R2dT" target="_blank">Download</a></li><li>📥 1.1GB → <a href="https://earn4link.in/HLjTYC4s" target="_blank">Download</a></li><li>📥 700MB → <a href="https://earn4link.in/L63YkgjtA5F5" target="_blank">Download</a></li><li>📥 400MB → <a href="https://earn4link.in/pA3g" target="_blank">Download</a></li><li>📥 250MB → <a href="https://earn4link.in/jb6ITn9u" target="_blank">Download</a></li></ul></div>
 <div class='movie-entry' style='display:none;'><h2>🎬 Right Tamil HQ PreDVD - - HQ Clean Audio 🎬</h2><ul class='link-list'><li>📥 2.2GB → <a href="https://earn4link.in/RmiisGzsZyKcEg" target="_blank">Download</a></li><li>📥 1.1GB → <a href="https://earn4link.in/kf0Ds" target="_blank">Download</a></li><li>📥 700MB → <a href="https://earn4link.in/n3QdRLCpwC0" target="_blank">Download</a></li><li>📥 400MB → <a href="https://earn4link.in/uPjT" target="_blank">Download</a></li><li>📥 250MB → <a href="https://earn4link.in/gBnyYPXVd2VOT5" target="_blank">Download</a></li></ul></div>
 <div class='movie-entry' style='display:none;'><h2>🎬 My Sweet Monster ( 🎬</h2><ul class='link-list'><li>📥 1.8GB → <a href="https://earn4link.in/4tkJqQR8Bv" target="_blank">Download</a></li><li>📥 1.1GB → <a href="https://earn4link.in/iipmtqBNE" target="_blank">Download</a></li><li>📥 450MB → <a href="https://earn4link.in/yjLhaTKW20EHd4" target="_blank">Download</a></li></ul></div>
-<div class='movie-entry' style='display:none;'><h2>🎬 ﻿ Redbelt ( 🎬</h2><ul class='link-list'><li>📥 1.9GB → <a href="https://earn4link.in/u7pcAZmw6qxuXD" target="_blank">Download</a></li><li>📥 1GB → <a href="https://earn4link.in/guxJa1f" target="_blank">Download</a></li><li>📥 400MB → <a href="https://earn4link.in/s9sUwwHusNY" target="_blank">Download</a></li></ul></div>
+<div class='movie-entry' style='display:none;'><h2>🎬 Redbelt ( 🎬</h2><ul class='link-list'><li>📥 1.9GB → <a href="https://earn4link.in/u7pcAZmw6qxuXD" target="_blank">Download</a></li><li>📥 1GB → <a href="https://earn4link.in/guxJa1f" target="_blank">Download</a></li><li>📥 400MB → <a href="https://earn4link.in/s9sUwwHusNY" target="_blank">Download</a></li></ul></div>
+<div class='movie-entry' style='display:none;'><h2>🎬 Ra.One 🎬</h2><ul class='link-list'><li>📥 1080P → <a href="https://earn4link.in/M0T8vT" target="_blank">Download</a></li></ul></div>
+<div class='movie-entry' style='display:none;'><h2>🎬 Anbarivu 🎬</h2><ul class='link-list'><li>📥 1080P → <a href="https://earn4link.in/MHZzBWP9WvZh6" target="_blank">Download</a></li></ul></div>
+<div class='movie-entry' style='display:none;'><h2>🎬 Modern Love Chennai S01 EP (01–06) 🎬</h2><h3>Episodes 01</h3><ul class='link-list'><li>📥 270MB → <a href="https://earn4link.in/m17KLD4GrS4jS" target="_blank">Download</a></li></ul><h3>Episodes 02</h3><ul class='link-list'><li>📥 270MB → <a href="https://earn4link.in/zH2siGAE1P2wqj" target="_blank">Download</a></li></ul><h3>Episodes 03</h3><ul class='link-list'><li>📥 270MB → <a href="https://earn4link.in/jjoIXREqT6IGyp" target="_blank">Download</a></li></ul><h3>Episodes 04</h3><ul class='link-list'><li>📥 270MB → <a href="https://earn4link.in/7T7uOM03n2p7Ix" target="_blank">Download</a></li></ul><h3>Episodes 05</h3><ul class='link-list'><li>📥 270MB → <a href="https://earn4link.in/iaKn" target="_blank">Download</a></li></ul><h3>Episodes 06</h3><ul class='link-list'><li>📥 270MB → <a href="https://earn4link.in/ftq4X6uJQ6M" target="_blank">Download</a></li></ul></div>
+<div class='movie-entry' style='display:none;'><h2>🎬 Tarot (Tamil) 🎬</h2><ul class='link-list'><li>📥 1080P → <a href="https://earn4link.in/EGFx9CU5v7RuMr" target="_blank">Download</a></li></ul></div>
+<div class='movie-entry' style='display:none;'><h2>🎬 Evil Dead Rise (2023) – English with ESub 🎬</h2><ul class='link-list'><li>📥 1080P → <a href="https://earn4link.in/9Pydg39xzygim0a" target="_blank">Download</a></li></ul></div>
+<div class='movie-entry' style='display:none;'><h2>🎬 Leo 🎬</h2><ul class='link-list'><li>📥 1080P → <a href="https://earn4link.in/TjTS" target="_blank">Download</a></li></ul></div>
+<div class='movie-entry' style='display:none;'><h2>🎬 Vikram 🎬</h2><ul class='link-list'><li>📥 1080P → <a href="https://earn4link.in/jxfpn" target="_blank">Download</a></li></ul></div>
+<div class='movie-entry' style='display:none;'><h2>🎬 Vallavanukku Pullum Aayudham (2014) 🎬</h2><ul class='link-list'><li>📥 1080P → <a href="https://earn4link.in/O3FzXu" target="_blank">Download</a></li></ul></div>
+<div class='movie-entry' style='display:none;'><h2>🎬 ﻿ Love Today 🎬</h2><ul class='link-list'><li>📥 1080P → <a href="https://earn4link.in/Icckub" target="_blank">Download</a></li></ul></div> 
 </div>
 <div id="no-results">No movies found matching your search.<br>
 Request to admin → <a href="https://t.me/+RXnEUdYTcNhmNjg1" target="_blank">Click Here</a></div>
@@ -2583,7 +2511,6 @@ Request to admin → <a href="https://t.me/+RXnEUdYTcNhmNjg1" target="_blank">Cl
 <script>
 document.addEventListener('DOMContentLoaded', function() {
   const itemsPerPage = 10;
-  // Select all movie entries regardless of their initial visibility setting
   const allEntries = Array.from(document.querySelectorAll('.movie-entry'));
   const searchInput = document.getElementById('search-input');
   const movieListContainer = document.getElementById('movie-list-container');
@@ -2592,20 +2519,10 @@ document.addEventListener('DOMContentLoaded', function() {
   let filteredEntries = allEntries.slice();
   let currentPage = 1;
 
-  // Since movie-list-container has entries, move the no-results and pagination elements 
-  // to be outside of it in the DOM (already handled by the Python string composition)
-
   function updateFiltered() {
     const q = (searchInput && searchInput.value || '').trim().toLowerCase();
-    if (!q) {
-      filteredEntries = allEntries.slice();
-    } else {
-      filteredEntries = allEntries.filter(el => {
-        // Search against the whole text content of the entry
-        const text = (el.textContent || '').toLowerCase();
-        return text.includes(q);
-      });
-    }
+    if (!q) filteredEntries = allEntries.slice();
+    else filteredEntries = allEntries.filter(el => (el.textContent || '').toLowerCase().includes(q));
   }
 
   function renderPage(page = 1) {
@@ -2614,112 +2531,44 @@ document.addEventListener('DOMContentLoaded', function() {
     if (page < 1) page = 1;
     if (page > totalPages) page = totalPages;
     currentPage = page;
-
-    // Hide all entries first
     allEntries.forEach(e => e.style.display = 'none');
-
-    // Show slice of filtered entries
-    const start = (currentPage - 1) * itemsPerPage;
-    const end = start + itemsPerPage;
-    const slice = filteredEntries.slice(start, end);
-    slice.forEach(e => e.style.display = 'block'); // Use 'block' to override initial 'none' or default
-
-    // no-results handling
-    if (filteredEntries.length === 0) {
-      if (noResultsEl) noResultsEl.style.display = 'block';
-      if (paginationEl) paginationEl.style.display = 'none';
-    } else {
-      if (noResultsEl) noResultsEl.style.display = 'none';
-      if (paginationEl) paginationEl.style.display = 'flex'; // 'flex' to match CSS
-    }
-
+    filteredEntries.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage).forEach(e => e.style.display = 'block');
+    if (filteredEntries.length === 0) { if (noResultsEl) noResultsEl.style.display = 'block'; if (paginationEl) paginationEl.style.display = 'none'; }
+    else { if (noResultsEl) noResultsEl.style.display = 'none'; if (paginationEl) paginationEl.style.display = 'flex'; }
     renderPagination(totalPages);
   }
 
   function renderPagination(totalPages) {
     if (!paginationEl) return;
     paginationEl.innerHTML = '';
+    if (totalPages <= 1 && filteredEntries.length > 0) { paginationEl.style.display = 'none'; return; }
 
-    // If only one page, hide pagination
-    if (totalPages <= 1 && filteredEntries.length > 0) {
-        paginationEl.style.display = 'none';
-        return;
-    }
+    if (currentPage > 1) { const aPrev = document.createElement('a'); aPrev.href = '#'; aPrev.textContent = 'Prev'; aPrev.addEventListener('click', e=>{ e.preventDefault(); renderPage(currentPage - 1); }); paginationEl.appendChild(aPrev); }
+    else { const sPrev = document.createElement('span'); sPrev.className = 'disabled'; sPrev.textContent = 'Prev'; paginationEl.appendChild(sPrev); }
 
-    // Prev
-    if (currentPage > 1) {
-      const aPrev = document.createElement('a');
-      aPrev.href = '#';
-      aPrev.textContent = 'Prev';
-      aPrev.addEventListener('click', function(e){ e.preventDefault(); renderPage(currentPage - 1); });
-      paginationEl.appendChild(aPrev);
-    } else {
-      const sPrev = document.createElement('span');
-      sPrev.className = 'disabled';
-      sPrev.textContent = 'Prev';
-      paginationEl.appendChild(sPrev);
-    }
-
-    // pages to display: 1, ..., current-1, current, current+1, ..., last
-    const pagesSet = new Set();
-    pagesSet.add(1);
-    if (totalPages > 1) pagesSet.add(totalPages);
-    pagesSet.add(currentPage);
-    if (currentPage - 1 >= 1) pagesSet.add(currentPage - 1);
-    if (currentPage + 1 <= totalPages) pagesSet.add(currentPage + 1);
-
+    const pagesSet = new Set(); pagesSet.add(1); if (totalPages > 1) pagesSet.add(totalPages); pagesSet.add(currentPage);
+    if (currentPage - 1 >= 1) pagesSet.add(currentPage - 1); if (currentPage + 1 <= totalPages) pagesSet.add(currentPage + 1);
     const pages = Array.from(pagesSet).filter(p => p >= 1 && p <= totalPages).sort((a,b) => a - b);
-
     let last = 0;
     pages.forEach(p => {
-      if (last && p - last > 1) {
-        const ell = document.createElement('span');
-        ell.className = 'ellipsis';
-        ell.textContent = '...';
-        paginationEl.appendChild(ell);
-      }
-      if (p === currentPage) {
-        const sp = document.createElement('span');
-        sp.className = 'current';
-        sp.textContent = p;
-        paginationEl.appendChild(sp);
-      } else {
-        const a = document.createElement('a');
-        a.href = '#';
-        a.textContent = p;
-        a.addEventListener('click', function(e){ e.preventDefault(); renderPage(p); });
-        paginationEl.appendChild(a);
-      }
+      if (last && p - last > 1) { const ell = document.createElement('span'); ell.className = 'ellipsis'; ell.textContent = '...'; paginationEl.appendChild(ell); }
+      if (p === currentPage) { const sp = document.createElement('span'); sp.className = 'current'; sp.textContent = p; paginationEl.appendChild(sp); }
+      else { const a = document.createElement('a'); a.href = '#'; a.textContent = p; a.addEventListener('click', e=>{ e.preventDefault(); renderPage(p); }); paginationEl.appendChild(a); }
       last = p;
     });
 
-    // Next
-    if (currentPage < totalPages) {
-      const aNext = document.createElement('a');
-      aNext.href = '#';
-      aNext.textContent = 'Next';
-      aNext.addEventListener('click', function(e){ e.preventDefault(); renderPage(currentPage + 1); });
-      paginationEl.appendChild(aNext);
-    } else {
-      const sNext = document.createElement('span');
-      sNext.className = 'disabled';
-      sNext.textContent = 'Next';
-      paginationEl.appendChild(sNext);
-    }
+    if (currentPage < totalPages) { const aNext = document.createElement('a'); aNext.href = '#'; aNext.textContent = 'Next'; aNext.addEventListener('click', e=>{ e.preventDefault(); renderPage(currentPage + 1); }); paginationEl.appendChild(aNext); }
+    else { const sNext = document.createElement('span'); sNext.className = 'disabled'; sNext.textContent = 'Next'; paginationEl.appendChild(sNext); }
   }
 
   if (searchInput) {
     let typingTimer = null;
     searchInput.addEventListener('input', function() {
       clearTimeout(typingTimer);
-      // Debounce the search input to avoid excessive re-rendering while typing
-      typingTimer = setTimeout(function() {
-        renderPage(1); // Go back to the first page on a new search
-      }, 150);
+      typingTimer = setTimeout(function() { renderPage(1); }, 150);
     });
   }
 
-  // initial render
   renderPage(1);
 });
 </script>
