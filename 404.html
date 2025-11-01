@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Maintenance | Tamil Movies Download</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      height: 100vh;
+      background: radial-gradient(circle at top, #1a1a1a, #000);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      color: white;
+      text-align: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    h1 {
+      font-size: 6rem;
+      font-weight: 700;
+      background: linear-gradient(90deg, #ff0000, #ff9900);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 20px rgba(255, 0, 0, 0.4);
+      animation: flicker 2s infinite alternate;
+    }
+
+    @keyframes flicker {
+      0% { opacity: 1; }
+      100% { opacity: 0.85; }
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      color: #ffcc00;
+      margin-bottom: 10px;
+    }
+
+    p {
+      max-width: 600px;
+      color: #ccc;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    .button {
+      margin-top: 30px;
+      padding: 12px 30px;
+      border-radius: 40px;
+      background: linear-gradient(90deg, #ff0000, #ff9900);
+      color: #fff;
+      font-weight: 600;
+      text-decoration: none;
+      box-shadow: 0 0 20px rgba(255, 80, 0, 0.6);
+      transition: 0.3s;
+    }
+
+    .button:hover {
+      transform: scale(1.08);
+      box-shadow: 0 0 30px rgba(255, 120, 0, 0.8);
+    }
+
+    .film {
+      font-size: 4rem;
+      margin-bottom: 10px;
+      animation: rotate 6s linear infinite;
+    }
+
+    @keyframes rotate {
+      100% { transform: rotate(360deg); }
+    }
+
+    footer {
+      position: absolute;
+      bottom: 10px;
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    /* Background glow effect */
+    .glow {
+      position: absolute;
+      width: 250px;
+      height: 250px;
+      background: radial-gradient(circle, rgba(255, 0, 0, 0.4), transparent);
+      top: 10%;
+      left: 20%;
+      filter: blur(90px);
+      animation: moveGlow 8s infinite alternate ease-in-out;
+    }
+
+    .glow2 {
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(255, 165, 0, 0.4), transparent);
+      bottom: 10%;
+      right: 25%;
+      filter: blur(100px);
+      animation: moveGlow 10s infinite alternate ease-in-out;
+    }
+
+    @keyframes moveGlow {
+      0% { transform: translateY(0px); }
+      100% { transform: translateY(40px); }
+    }
+  </style>
+</head>
+<body>
+  <div class="glow"></div>
+  <div class="glow2"></div>
+
+  <div class="film">🎬</div>
+  <h1>404</h1>
+  <h2>Website Under Maintenance</h2>
+  <p>
+    Our movie collection is currently being updated with the latest Tamil releases.<br>
+    Please check back after <strong>5 minutes</strong> — new movies will be added soon!
+  </p>
+  <a href="/" class="button">🔙 Go to Home</a>
+
+  <footer>© 2025 TamilMoviesDownload — All Rights Reserved</footer>
+</body>
+</html>
